@@ -19,7 +19,6 @@ settings_local.py
 .DS_Store
 
 # Unnesessary repos
-2.2-databases-2/
 3.1-drf_intro/
 3.2-crud/
 3.3-permissions/
