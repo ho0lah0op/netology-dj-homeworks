@@ -1,6 +1,6 @@
 from django_filters import rest_framework as filters
 
-from advertisements.models import Advertisement
+from advertisements.models import Advertisement, AdvertisementStatusChoices
 
 
 class AdvertisementFilter(filters.FilterSet):
@@ -9,7 +9,8 @@ class AdvertisementFilter(filters.FilterSet):
     # TODO: задайте требуемые фильтры
     created_at = filters.DateFromToRangeFilter()
     creator = filters.NumberFilter(field_name="creator_id")
+    status = filters.ChoiceFilter(field_name='status', choices=AdvertisementStatusChoices.choices)
 
     class Meta:
         model = Advertisement
-        fields = ['creator', 'title', 'created_at']
+        fields = ['creator', 'title', 'created_at', 'status']
